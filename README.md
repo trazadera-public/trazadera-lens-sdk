@@ -107,8 +107,11 @@ Metrics should be printed to the standard output in a specific format that the T
 ```
 timestamp metric1=value1 metric2=value2 ...
 ```
-Where `timestamp` is the current timestamp UTC ISO 8601 format, and `metric1`, `metric2`, etc. are the metric names 
-and their corresponding values.
+Considering the following:
+- `timestamp` is the current timestamp UTC ISO 8601 format.
+- `metric1`, `metric2`, etc. are the metric keys. Only alphanumeric characters, underscores, and hyphens are allowed.
+- `value1`, `value2`, etc. are the corresponding metric values. They can be integers, floating-point numbers, or strings.
+Do not include any space.
 
 Example:
 ```
