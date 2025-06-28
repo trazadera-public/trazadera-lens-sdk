@@ -29,6 +29,9 @@ dependencies {
 }
 ```
 
+Make sure to use Java 8 as the version to ensure compatibility with the Trazadera Lens Agent.
+
+
 ## Creating a program to run on the Trazadera Lens Agent
 
 A Trazadera Lens Agent program is a Java application that can be executed by the Trazadera Lens Agent. 
