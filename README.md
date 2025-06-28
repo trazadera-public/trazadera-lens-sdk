@@ -5,6 +5,7 @@ as much as possible the underlying operating system and hardware, allowing you t
 - Access specific operating system object, such as Android Context.
 - Leverage program configuration.
 - Use the Trazadera Lens Agent logging system.
+- Understand what is the operating system your program is running on.
 
 
 ## Using the SDK
@@ -51,6 +52,7 @@ You can use this context to access various resources and services provided by th
 - Accessing the configuration of your program.
 - Logging messages to the Trazadera Lens Agent logging system.
 - Accessing the Android Context if your program is running on an Android device.
+- Retrieve the operating system information.
 
 You can obtain the context by calling the `Context.get()` method. This will return an instance of the `Context` class.
 
@@ -90,6 +92,26 @@ The following table contains the usual formatting options for the logger:
 | `%c`      | Character                          | `A`              |
 | `%b`      | Boolean                            | `true`           |
 
+### Configuration
+
+Your program can access its configuration through the Trazadera Lens Agent context.
+You can retrieve the configuration by calling `Context.get().configuration()`. 
+This will return a `Configuration` object that contains the configuration of your program.
+
+The configuration is specific to your program and is defined in the Trazadera Lens Platform.
+For example, you can define configuration parameters in the Trazadera Lens Platform such as `wifi_ssid`
+or `wifi_db_threshold`, which can be used by your program to access specific values.
+
+Assuming that you have defined the following configuration parameters in the Trazadera Lens Platform:
+```properties
+wifi_ssid=MyNetwork
+wifi_db_threshold=-70
+```
+You can access these parameters in your program using the `Configuration` object:
+```java
+String wifiSsid = Context.get().configuration().getProperty("wifi_ssid");
+int wifiDbThreshold = Context.get().configuration().getIntProperty("wifi_db_threshold", -80);
+```
 
 ### Generating Metrics
 
