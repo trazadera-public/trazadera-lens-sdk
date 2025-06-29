@@ -20,7 +20,7 @@ If using Maven, you can do this by adding the following line to your `pom.xml` f
 
 <dependency>
     <groupId>com.trazadera.lens</groupId>
-    <artifactId>lens-sdk</artifactId>
+    <artifactId>trazadera-lens-sdk</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -29,7 +29,7 @@ If using Gradle, you can add the following line to your `build.gradle` file:
 
 ```groovy
 dependencies {
-    implementation 'com.trazadera.lens:lens-sdk:1.0.0'
+    implementation 'com.trazadera.lens:trazadera-lens-sdk:1.0.0'
 }
 ```
 
