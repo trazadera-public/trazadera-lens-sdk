@@ -166,3 +166,31 @@ Example:
 Your metric names and values should not contain spaces or special characters, and should be formatted as key-value
 pairs.
 
+### Testing your program
+
+Your program can be tested by leveraging the class `TestContext` that implements a very simple context
+to test your program without the need of the Trazadera Lens Agent.
+
+To use the test context, just create an instance of `TestContext` and pass it to your program.
+
+```java
+import com.trazadera.lens.sdk.*;
+
+import java.util.*;
+
+public class MyProgram extends Program {
+
+    @Override
+    public void run(Context context) {
+        // do stuff
+    }
+
+    public static void main(String[] args) {
+        MyProgram myprogram = new MyProgram();
+        Map config = new HashMap();
+        config.put("key1", "value1");
+        Context ctx = new TestContext(null, config);
+        myprogram.run(ctx);
+    }
+}
+```

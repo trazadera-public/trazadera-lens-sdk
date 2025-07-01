@@ -26,6 +26,13 @@ public abstract class Context {
     return threadLocal.get();
   }
 
+  /**
+   * Sets the context for the current thread. Only callable from subclasses.
+   */
+  protected void setThreadLocal() {
+    threadLocal.set(this);
+  }
+
   // Accessors
   // ============================================================
 
